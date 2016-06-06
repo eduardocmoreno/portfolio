@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery edbox plugin</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/edbox.css">
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/jquery.edbox.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			$('.abre').edbox({
+				content: '#target'/*,
+				onClose: function(){
+					$.edbox({
+						content: 'retorno ao fechar'
+					});
+				}*/
+			});
+
+			$('.abreUrl').edbox({
+				//className: 'modal'
+			});
+
+			$.edbox({
+			content: '#target'
+				//content  : '<div style="white-space:nowrap; padding:50px;">- Lorem ipsum dolor sit amet, consectetur</div>'
+				//content:'teste@teste.com'
+				//content:'php/teste.php?teste=alooookooooo'
+				//content: 'images/horizontal-image.png'
+				//,height:300
+				//,width:700
+				//,fx: 'fade'
+				//,duration: 1000
+				//,animation:false
+				//,className:'modal'
+				//,disableClose:true
+				//,htmlClose:''
+				//,header: 'Lorem ipsum dolor sit amet'
+				//,footer: 'Lorem ipsum dolor'
+				,onClose: function(){
+					alert('fechou!');
+				}
+				,onOpen: function(){
+					alert('abriu!')
+				}
+				,beforeOpen : function(){
+					alert('vai abrir');
+				}
+				,beforeClose : function(){
+					alert('vai fechar');
+				}
+			});
+
+			/*$.edbox({
+				content: 'images/vertical-image.png'
+			});*/
+
+			$(this)
+			.on('click', '.teste', function(e) {
+				alert('teste');
+				e.preventDefault();
+			});
+
+		});
+	</script>
+</head>
+<body>
+
+		<!--<div style="height:20px; background:green; position:absolute; top:0; left:0; width:100%; z-index:200; opacity:.5"></div>
+		<div style="height:20px; background:green; position:absolute; bottom:0; left:0; width:100%; z-index:200; opacity:.5"></div>
+		<div style="height:100%; background:brown; position:absolute; bottom:0; left:0; width:20px; z-index:200; opacity:.5"></div>
+		<div style="height:100%; background:brown; position:absolute; bottom:0; right:0; width:20px; z-index:200; opacity:.5"></div>-->
+
+		<a class="abre" href="#target">abre modal</a>
+		<br><br>
+		<a class="abreUrl" href="php/teste.php?teste=alooookooooo">abre modal url</a>
+		<br><br>
+		<a class="teste" href="">outro link</a>
+
+		<section>
+			<div>
+				<div id="target" style="width:300px;">
+					<form action="" method="get">
+						<input name="nome" type="text">
+						<input type="submit">
+					</form>
+				</div>
+			</div>
+		</section>
+
+	</body>
+	</html>
