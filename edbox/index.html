@@ -24,8 +24,8 @@
 				//className: 'modal'
 			});
 
-			$.edbox({
-			content: '#target'
+			/*$.edbox({
+				content: '#target'
 				//content  : '<div style="white-space:nowrap; padding:50px;">- Lorem ipsum dolor sit amet, consectetur</div>'
 				//content:'teste@teste.com'
 				//content:'php/teste.php?teste=alooookooooo'
@@ -52,11 +52,11 @@
 				,beforeClose : function(){
 					alert('vai fechar');
 				}
-			});
-
-			/*$.edbox({
-				content: 'images/vertical-image.png'
 			});*/
+
+			$.edbox({
+				content: '#construction'
+			});
 
 			$(this)
 			.on('click', '.teste', function(e) {
@@ -73,7 +73,7 @@
 		<div style="height:20px; background:green; position:absolute; bottom:0; left:0; width:100%; z-index:200; opacity:.5"></div>
 		<div style="height:100%; background:brown; position:absolute; bottom:0; left:0; width:20px; z-index:200; opacity:.5"></div>
 		<div style="height:100%; background:brown; position:absolute; bottom:0; right:0; width:20px; z-index:200; opacity:.5"></div>-->
-
+<!--
 		<a class="abre" href="#target">abre modal</a>
 		<br><br>
 		<a class="abreUrl" href="php/teste.php?teste=alooookooooo">abre modal url</a>
@@ -90,6 +90,12 @@
 				</div>
 			</div>
 		</section>
-
-	</body>
-	</html>
+	-->
+	<div id="construction">
+		<p>Hello there!</p>
+		<p>Sorry for this! I'm finishing the website construction with all documentation and examples.</p>
+		<p>While this, you can access the repository plugin on <a href="https://github.com/eduardocmoreno/edBox">gitHub</a>.</p>
+		<p>Thank you and see you later!</p>
+	</div>
+</body>
+</html>

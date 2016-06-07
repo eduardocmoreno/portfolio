@@ -1,6 +1,15 @@
 body{
-	background:#fff;
+	background: url('../../img/job-plugin-edbox.png') center fixed #333 no-repeat;
 	margin: 0;
 	font-family: Arial, sans-serif;
 	font-size: 12px;
+}
+#construction{
+	display: none;
+	padding: 40px;
+	text-align: center;
+	font-size: 14px;
+}
+#construction p{
+	margin: 5px 0;
 }

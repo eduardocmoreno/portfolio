@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
 	<title>Eduardo Moreno - Desenvolvedor Web</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="stylesheet" href="css/style.css">
@@ -21,7 +22,7 @@
 				e.preventDefault();
 				var target = $(this).attr('rel');
 				$(document).scrollTo('#' + target, {duration: 1000, offset: -80, easing: 'easeInOutExpo'});
-			});		
+			});
 		});
 	</script>
 </head>
@@ -29,62 +30,64 @@
 	<header>
 		<div>
 			<nav>
-				<a href class="whoAmI" rel="whoAmI">who am I?</a>
-				<a href class="knowledge" rel="knowledge">knowledge</a>
-				<a href class="jobs" rel="jobs">jobs</a>
-				<a href class="contact" rel="contact">contact</a>
+				<a href class="whoAmI wow fadeIn" data-wow-delay=".1s" rel="whoAmI">who am I?</a>
+				<a href class="knowledge wow fadeIn" data-wow-delay=".15s" rel="knowledge">knowledge</a>
+				<a href class="jobs wow fadeIn" data-wow-delay=".2s" rel="jobs">jobs</a>
+				<a href class="contact wow fadeIn" data-wow-delay=".25s" rel="contact">contact</a>
 			</nav>
-			<div class="name">
+			<a href="" class="name wow fadeIn">
 				<img src="img/logo.png" alt="logo"><b>Edu</b>Moreno
-			</div>
+			</a>
 		</div>
 	</header>
 	<section class="whoAmI" id="whoAmI">
 		<div>
-			<h1>who am I?</h1>
+			<h1 class="wow fadeIn">who am I?</h1>
 			<div class="content">
-				<img src="img/edu.png" alt="edu" class="animated fadeIn"><br>
-				Hello there!<br>
-				My name is Eduardo Moreno, I'm 34 years old, bachelor in Industrial Design by Positivo University (Curitiba - Brazil) since 2004, but my experience with web and graphic design comes since 2001. In my idle hours I'm musician (guitar player) and electronic effect pedals developer.<br>
-				Hope you enjoy my webpage! Thank you very much!
+				<img src="img/edu.png" alt="edu" class="wow flipInX" data-wow-duration=".6s" data-wow-delay=".2s"><br>
+				<span class="wow fadeIn" data-wow-delay=".4s">
+					Hello there!<br>
+					My name is Eduardo Moreno, I'm 34 years old, bachelor in Industrial Design by Positivo University (Curitiba - Brazil) since 2004, but my experience with web and graphic design comes since 2001. In my idle hours I'm musician (guitar player) and electronic effect pedals developer.<br>
+					Hope you enjoy my webpage! Thank you very much!
+				</span>
 			</div>
 		</div>
 	</section>
 	<section class="knowledge" id="knowledge">
 		<div>
-			<h1>knowledge</h1>
-			<h2>[ Front-end ]</h2>
+			<h1 class="wow fadeIn">knowledge</h1>
+			<h2 class="wow fadeIn" data-wow-delay=".2s">[ Front-end ]</h2>
 			<br>
 			<div class="content icons">
-				<div class="wrap">
+				<div class="wrap wow fadeIn" data-wow-delay=".1s">
 					<img src="img/k-html5.png" alt="html5">
 				</div>
-				<div class="wrap">
+				<div class="wrap wow fadeIn" data-wow-delay=".2s">
 					<img src="img/k-css3.png" alt="css3">
 				</div>
-				<div class="wrap">
+				<div class="wrap wow fadeIn" data-wow-delay=".3s">
 					<img src="img/k-jquery.png" alt="jquery">
 				</div>
-				<div class="wrap">
+				<div class="wrap wow fadeIn" data-wow-delay=".4s">
 					<img src="img/k-javascript.png" alt="javascript">
 				</div>
-				<div class="wrap">
+				<div class="wrap wow fadeIn" data-wow-delay=".5s">
 					<img src="img/k-angular.png" alt="angularjs">
-				</div>				
+				</div>
 			</div>
 			<br><br>
-			<h2>[ Graphics ]</h2>
+			<h2 class="wow fadeIn" data-wow-delay=".2s">[ Graphics ]</h2>
 			<div class="content icons">
-				<div class="wrap">
+				<div class="wrap wow fadeIn" data-wow-delay=".1s">
 					<img src="img/k-ps.png" alt="Photoshop">
 				</div>
-				<div class="wrap">
+				<div class="wrap wow fadeIn" data-wow-delay=".2s">
 					<img src="img/k-fw.png" alt="Fireworks">
 				</div>
-				<div class="wrap">
+				<div class="wrap wow fadeIn" data-wow-delay=".3s">
 					<img src="img/k-ai.png" alt="Illustrator">
 				</div>
-				<div class="wrap">
+				<div class="wrap wow fadeIn" data-wow-delay=".4s">
 					<img src="img/k-corel.png" alt="CorelDraw">
 				</div>
 			</div>
@@ -199,7 +202,7 @@
 				<div class="content icons plugins">
 					<div  class="wrap wow fadeIn" data-wow-delay=".1s">
 						<img src="img/job-plugin-edslider.png" alt="edSlider">
-						<a href="" class="linkSlide">
+						<a href="edslider" class="linkSlide">
 							webpage
 							<span></span>
 						</a>
@@ -211,7 +214,7 @@
 					</div>
 					<div  class="wrap wow fadeIn" data-wow-delay=".2s">
 						<img src="img/job-plugin-edbox.png" alt="edBox">
-						<a href="" class="linkSlide">
+						<a href="edbox" class="linkSlide">
 							webpage
 							<span></span>
 						</a>
@@ -227,11 +230,21 @@
 	</section>
 	<section class="contact" id="contact">
 		<div>
-			<h1>contact</h1>
+			<h1 class="wow fadeIn">contact</h1>
 			<div class="content">
-				+55 41 8449-3809<br>
-				eduardocmoreno@gmail.com
-				<br><br>
+				<p class="wow fadeIn">+55 41 8449-3809</p>
+				<p class="wow fadeIn">eduardocmoreno@gmail.com</p>
+				<div class="socialIcons">
+					<a href="http://facebook.com/eduardomoreno81" target="_blank" class="wow fadeIn facebook" data-wow-delay=".1s">
+						<img src="img/icon-facebook.png" alt="Facebook">
+					</a>
+					<a href="http://lnkd.in/59e_uq" target="_blank" class="wow fadeIn linkedin" data-wow-delay=".15s">
+						<img src="img/icon-linkedin.png" alt="linkedIn">
+					</a>
+					<a href="https://www.youtube.com/c/eduardocmoreno81" target="_blank" class="wow fadeIn youtube" data-wow-delay=".2s">
+						<img src="img/icon-youtube.png" alt="You Tube">
+					</a>
+				</div>
 				<small>
 					Copyright © 2016 - Eduardo Moreno
 				</small>
