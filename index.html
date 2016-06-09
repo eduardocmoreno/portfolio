@@ -16,41 +16,34 @@
 		//init WOW
 		new WOW().init();
 
-		//window loading
-		$(window).load(function(){
+		//Document ready
+		$(document).ready(function(){
+			//setting variables
+			var nav = $('#menu'), nav_a = $('#menu a');
+			var wow = $('.wow');
 
-			//after loading show body
-			$('body').show();
+			//responsive functions
+			$(window).resize(function(){
+				var win_w = $(window).width();				
+				if(win_w < 710){
+					nav.addClass('compact').click(function(){
+						nav.toggleClass('active');
+					});
+				} else {
+					nav.removeClass('active compact').off('click');
+				}
+				if(win_w < 500) { wow.removeAttr('data-wow-delay') };
+			}).resize();
 
-			//Document ready
-			$(document).ready(function(){
-				//setting variables
-				var nav = $('#menu'), nav_a = $('#menu a');
-				var wow = $('.wow');
-
-				//responsive functions
-				$(window).resize(function(){
-					var win_w = $(window).width();				
-					if(win_w < 710){
-						nav.addClass('compact').click(function(){
-							nav.toggleClass('active');
-						});
-					} else {
-						nav.removeClass('active compact').off('click');
-					}
-					if(win_w < 500) { wow.removeAttr('data-wow-delay') };
-				}).resize();
-
-				//scrollTo
-				var scrollConfig = {duration: 1000, offset: -80, easing: 'easeInOutExpo'};
-				$(window).scrollTo('body', scrollConfig);
-				nav_a.on('click', function(e){
-					e.preventDefault();
-					var target = $(this).attr('rel');
-					$(window).scrollTo('#' + target, scrollConfig);
-				});
+			//scrollTo
+			var scrollConfig = {duration: 1000, offset: -80, easing: 'easeInOutExpo'};
+			$(window).scrollTo('body', scrollConfig);
+			nav_a.on('click', function(e){
+				e.preventDefault();
+				var target = $(this).attr('rel');
+				$(window).scrollTo('#' + target, scrollConfig);
 			});
-		});
+		});		
 	</script>
 </head>
 <body>
