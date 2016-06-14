@@ -44,5 +44,9 @@
 	display:block;
 	border:0;
 }
-
+#box-error{
+	background: red;
+	color: #fff;
+	padding: 30px;
+}
 

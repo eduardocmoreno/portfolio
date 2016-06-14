@@ -46,6 +46,7 @@ hr{
 .btn:hover{
 	background:#fff;
 	color:#32A1B8;
+	cursor: pointer;
 }
 .btn.download{
 	font-size:20px;
