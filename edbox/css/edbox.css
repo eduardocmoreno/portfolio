@@ -5,16 +5,16 @@
 #box,
 #box-load{
 	border-radius:8px;
-	border:5px solid rgba(0,0,0,.8);
-	background-color:#fff;
-	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	background-color:rgba(0, 0, 0, .8);
+	box-shadow:0 0 10px rgba(0, 0, 0, .5);
 }
 #box-load{
 	padding:10px;
+	background: #fff;
 }
 #box-overlay{
 	background:#000;
-	opacity:.1;
+	opacity:.5;
 }
 #box-header{
 	background:url("../images/bg-header.png") repeat-x;
@@ -34,8 +34,8 @@
 }
 #box-close{
 	white-space:nowrap;
-	top:0;
-	right:0;
+	top:5px;
+	right:5px;
 	border:0;
 	background:none;
 	color:#000;

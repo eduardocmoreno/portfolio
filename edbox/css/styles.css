@@ -1,15 +1,134 @@
 body{
-	background: url('../../img/job-plugin-edbox.png') center fixed #333 no-repeat;
+	margin:0;
+	font-family:Arial, sans-serif;
+	font-size:14px;
+	background-color:#333;
+	color:#fff;
+	padding-top:30px;
+}
+h1{
+	font-size:40px;
+	line-height:50px;
+	float:left;
+	margin:0;
+}
+h1 span{
+	color:#999;
+	font-weight:normal;
+}
+h1,
+h2{
+	font-family:"Open Sans Condensed", sans-serif;
+}
+ul{
+	margin:0;
+	padding:0 0 20px 30px;
+}
+hr{
+	height: 0px;
+	border: dotted #ccc;
+	border-width: 1px 0 0 0;
+	margin: 20px 0;
+	background: transparent;
+	clear: both;
+}
+.btn{
+	background:#32A1B8;
+	border-radius:5px;
+	color:#fff;
+	display:inline-block;
+	font-family:"open sans condensed", sans-serif;
+	line-height:30px;
+	padding:0 10px;
+	text-decoration:none;
+	transition:.25s;
+}
+.btn:hover{
+	background:#fff;
+	color:#32A1B8;
+}
+.btn.download{
+	font-size:20px;
+	font-weight:bold;
+	line-height:50px;
+	padding:0 20px;
+}
+header{
+	margin:auto;
+}
+header .logo{
+	display: block;
+	float: left;
+}
+header .btn.download{
+	margin-top: 10px;
+}
+header,
+.container{
+	width:900px;
+	overflow:hidden;
+}
+.container{
+	margin:auto;
+}
+.codes{
+	display: flex;
+	flex-wrap: wrap;
+	margin: -5px;
+}
+.codes > div{
+	flex: 1;
+	background: #272727;
+	margin: 5px;
+}
+.codes h3{
+	padding: 10px 0 0 10px;
 	margin: 0;
-	font-family: Arial, sans-serif;
-	font-size: 12px;
 }
-#construction{
+table{
+	background: #272727;
+	border-collapse: collapse;
+	width: 100%;
+}
+table tbody tr:nth-child(odd){
+	background-color: #222;
+}
+table td,
+table th{
+	padding:10px;
+	text-align:left;
+}
+table th,
+.link{
+	color:#32A1B8;
+}
+.float-right{
+	float:right;
+}
+.float-left{
+	float:left;
+}
+.icon{
+	vertical-align: middle;
+	margin-right: 5px;
+}
+#target1{
+	padding: 50px;
+	background: crimson;
+	color: #fff;
+	font-size: 30px;
 	display: none;
-	padding: 40px;
-	text-align: center;
-	font-size: 14px;
 }
-#construction p{
-	margin: 5px 0;
+#target2{
+	padding: 20px;
+	background: darkolivegreen;
+	color: #fff;
+	font-size: 50px;
+	display: none;
+}
+#target3{
+	padding: 30px;
+	background: purple;
+	color: #fff;
+	font-size: 20px;
 }
