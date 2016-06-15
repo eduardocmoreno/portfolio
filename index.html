@@ -3,8 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="format-detection" content="telephone=no">
-	<title>Eduardo Moreno - Desenvolvedor Web</title>
+	<meta name="description" content="Portfolio Webdesigner Front-end developer">
+	<meta name="keywords" content="front-end,webdesigner,web,design,HTML,CSS,JavaScript,jquery">
+	<meta name="author" content="Eduardo Moreno">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Eduardo Moreno - Desenvolvedor Web</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" type="text/css">
@@ -14,7 +17,6 @@
 	<script src="js/jquery.easing.1.3.js"></script>
 	<script>
 
-
 		//Document ready
 		$(document).ready(function(){
 			//setting variables
@@ -22,20 +24,28 @@
 			var wow = $('.wow').css('visibility','hidden');
 
 			//responsive functions
-			$(window).resize(function(){
-				var win_w = $(window).width();				
-				if(win_w < 710){
-					nav.addClass('compact').click(function(){
-						nav.toggleClass('active');
-					});
-				} else {
-					nav.removeClass('active compact').off('click');
-				}
-				if(win_w < 500) { wow.removeAttr('data-wow-delay') };
-			}).resize();
-
-			//scrollTo
-			$(window).scrollTo('body', {duration: 500, offset: -80, easing: 'easeInOutExpo', complete: function(){new WOW().init()}});
+			$(window)
+				.resize(function(){
+					var win_w = $(window).width();				
+					if(win_w < 710){
+						nav.addClass('compact').click(function(){
+							nav.toggleClass('active');
+						});
+					} else {
+						nav.removeClass('active compact').off('click');
+					}
+					if(win_w < 500) { wow.removeAttr('data-wow-delay') };
+				})
+				.resize()			
+				.scrollTo('body', {
+					duration: 500, 
+					offset: -80, 
+					easing: 'easeInOutExpo', 
+					complete: function(){
+						new WOW().init();
+					}
+				});
+			
 			nav_a.on('click', function(e){
 				e.preventDefault();
 				var target = $(this).attr('rel');
@@ -80,16 +90,16 @@
 				<div class="wrap wow fadeIn" data-wow-delay=".1s">
 					<img src="img/k-html5.png" alt="html5">
 				</div>
-				<div class="wrap wow fadeIn" data-wow-delay=".2s">
+				<div class="wrap wow fadeIn" data-wow-delay=".15s">
 					<img src="img/k-css3.png" alt="css3">
 				</div>
-				<div class="wrap wow fadeIn" data-wow-delay=".3s">
+				<div class="wrap wow fadeIn" data-wow-delay=".2s">
 					<img src="img/k-jquery.png" alt="jquery">
 				</div>
-				<div class="wrap wow fadeIn" data-wow-delay=".4s">
+				<div class="wrap wow fadeIn" data-wow-delay=".25s">
 					<img src="img/k-javascript.png" alt="javascript">
 				</div>
-				<div class="wrap wow fadeIn" data-wow-delay=".5s">
+				<div class="wrap wow fadeIn" data-wow-delay=".3s">
 					<img src="img/k-angular.png" alt="angularjs">
 				</div>
 			</div>
@@ -99,13 +109,13 @@
 				<div class="wrap wow fadeIn" data-wow-delay=".1s">
 					<img src="img/k-ps.png" alt="Photoshop">
 				</div>
-				<div class="wrap wow fadeIn" data-wow-delay=".2s">
+				<div class="wrap wow fadeIn" data-wow-delay=".15s">
 					<img src="img/k-fw.png" alt="Fireworks">
 				</div>
-				<div class="wrap wow fadeIn" data-wow-delay=".3s">
+				<div class="wrap wow fadeIn" data-wow-delay=".2s">
 					<img src="img/k-ai.png" alt="Illustrator">
 				</div>
-				<div class="wrap wow fadeIn" data-wow-delay=".4s">
+				<div class="wrap wow fadeIn" data-wow-delay=".25s">
 					<img src="img/k-corel.png" alt="CorelDraw">
 				</div>
 			</div>
@@ -127,35 +137,35 @@
 						</span>
 						<img src="img/job-web-matiza.png" alt="Matiza Plast">
 					</a>
-					<a href="http://sindimoveis.org.br/" class="wrap wow fadeIn" target="_blank" data-wow-delay=".2s">
+					<a href="http://sindimoveis.org.br/" class="wrap wow fadeIn" target="_blank" data-wow-delay=".15s">
 						<span>
 							<b>Sindimóveis</b>
 							<span>website</span>
 						</span>
 						<img src="img/job-web-sindi.png" alt="Sindimoveis">
 					</a>
-					<a href="http://moveistotal.com.br" class="wrap wow fadeIn" target="_blank" data-wow-delay=".3s">
+					<a href="http://moveistotal.com.br" class="wrap wow fadeIn" target="_blank" data-wow-delay=".2s">
 						<span>
 							<b>Móveis Total</b>
 							<span>website</span>
 						</span>
 						<img src="img/job-web-moveis.png" alt="Moveis Total">
 					</a>
-					<a href="http://brahmanengenharia.com.br" class="wrap wow fadeIn" target="_blank" data-wow-delay=".4s">
+					<a href="http://brahmanengenharia.com.br" class="wrap wow fadeIn" target="_blank" data-wow-delay=".25s">
 						<span>
 							<b>Brahman Eng.</b>
 							<span>website</span>
 						</span>
 						<img src="img/job-web-brahman.png" alt="Brahman Engenharia">
 					</a>
-					<a href="http://sideralsegseguros.com.br" class="wrap wow fadeIn" target="_blank" data-wow-delay=".5s">
+					<a href="http://sideralsegseguros.com.br" class="wrap wow fadeIn" target="_blank" data-wow-delay=".3s">
 						<span>
 							<b>Sideralseg</b>
 							<span>website</span>
 						</span>
 						<img src="img/job-web-sideral.png" alt="Sideralseg">
 					</a>
-					<a href="http://hotelpalacio.com.br" class="wrap wow fadeIn" target="_blank" data-wow-delay=".6s">
+					<a href="http://hotelpalacio.com.br" class="wrap wow fadeIn" target="_blank" data-wow-delay=".35s">
 						<span>
 							<b>Hotel Palácio</b>
 							<span>website</span>
@@ -176,35 +186,35 @@
 						</span>
 						<img src="img/job-branding-ciadamusica.png" alt="Cia da musica">
 					</div>
-					<div class="wrap wow fadeIn" data-wow-delay=".2s">
+					<div class="wrap wow fadeIn" data-wow-delay=".15s">
 						<span>
 							<b>Rodrigo Leal</b>
 							<span>logotype</span>
 						</span>
 						<img src="img/job-branding-rodrigo.png" alt="Rodrigo Leal Fotografo">
 					</div>
-					<div class="wrap wow fadeIn" data-wow-delay=".3s">
+					<div class="wrap wow fadeIn" data-wow-delay=".2s">
 						<span>
 							<b>Celloni do Brasil</b>
 							<span>logotype</span>
 						</span>
 						<img src="img/job-branding-celloni.png" alt="Celloni do Brasil">
 					</div>
-					<div class="wrap wow fadeIn" data-wow-delay=".4s">
+					<div class="wrap wow fadeIn" data-wow-delay=".25s">
 						<span>
 							<b>Fazseg</b>
 							<span>logotype</span>
 						</span>
 						<img src="img/job-branding-fazseg.png" alt="Fazseg">
 					</div>
-					<div class="wrap wow fadeIn" data-wow-delay=".5s">
+					<div class="wrap wow fadeIn" data-wow-delay=".3s">
 						<span>
 							<b>Gouvêa Adv.</b>
 							<span>logotype</span>
 						</span>
 						<img src="img/job-branding-gouvea.png" alt="Gouvea Advocacia">
 					</div>
-					<div class="wrap wow fadeIn" data-wow-delay=".6s">
+					<div class="wrap wow fadeIn" data-wow-delay=".35s">
 						<span>
 							<b>S.A.Mass</b>
 							<span>logotype</span>
@@ -213,33 +223,29 @@
 					</div>
 				</div>
 
-				<!-- Code -->
+				<!-- Plugins -->
 				<br>
 				<b>[ jQuery Plugins ]</b>
 				<br>
 				<div class="content icons plugins">
 					<div  class="wrap wow fadeIn" data-wow-delay=".1s">
 						<img src="img/job-plugin-edslider.png" alt="edSlider">
-						<a href="edslider" class="linkSlide">
-							webpage
-							<span></span>
+						<a href="edslider" target="_blank" class="linkSlide">
+							webpage<span></span>
 						</a>
 						|
 						<a href="https://github.com/eduardocmoreno/edslider" target="_blank" class="linkSlide">
-							gitHub
-							<span></span>
+							gitHub<span></span>
 						</a>
 					</div>
-					<div  class="wrap wow fadeIn" data-wow-delay=".2s">
+					<div  class="wrap wow fadeIn" data-wow-delay=".15s">
 						<img src="img/job-plugin-edbox.png" alt="edBox">
-						<a href="edbox" class="linkSlide">
-							webpage
-							<span></span>
+						<a href="edbox" target="_blank" class="linkSlide">
+							webpage<span></span>
 						</a>
 						|
 						<a href="https://github.com/eduardocmoreno/edBox" class="linkSlide">
-							gitHub
-							<span></span>
+							gitHub<span></span>
 						</a>
 					</div>
 				</div>
@@ -263,9 +269,7 @@
 						<img src="img/icon-youtube.png" alt="You Tube">
 					</a>
 				</div>
-				<small>
-					Copyright © 2016 - Eduardo Moreno
-				</small>
+				<small>Copyright © 2016 - Eduardo Moreno</small>
 			</div>
 		</div>
 	</section>

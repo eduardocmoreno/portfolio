@@ -1,4 +1,4 @@
-/* boxClass = box (default) */
+/* prefixId = box (default) */
 #box{
 	overflow:hidden;
 }
@@ -49,4 +49,3 @@
 	color: #fff;
 	padding: 30px;
 }
-

@@ -1,7 +1,6 @@
 body{
 	margin:0;
-	font-family:Arial, sans-serif;
-	font-size:14px;
+	font:14px Arial, sans-serif;
 	background-color:#333;
 	color:#fff;
 	padding-top:30px;
@@ -35,10 +34,12 @@ hr{
 .btn{
 	background:#32A1B8;
 	border-radius:5px;
+	border: 0;
 	color:#fff;
 	display:inline-block;
 	font-family:"open sans condensed", sans-serif;
 	line-height:30px;
+	height: 30px;
 	padding:0 10px;
 	text-decoration:none;
 	transition:.25s;
@@ -52,7 +53,13 @@ hr{
 	font-size:20px;
 	font-weight:bold;
 	line-height:50px;
+	height: 50px;
 	padding:0 20px;
+}
+button{
+	vertical-align: bottom;
+	font-size: 14px;
+	outline: none;
 }
 header{
 	margin:auto;
