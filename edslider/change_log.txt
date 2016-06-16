@@ -13,3 +13,5 @@
 
 1.4
 - Improved: responsive dimensions
+- Improved: preloading images
+- Improved: progress bar function
