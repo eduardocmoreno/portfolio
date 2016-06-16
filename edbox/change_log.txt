@@ -1,43 +1,44 @@
-Change log:
- 1.1
- - foi mexida na parte das dimensions
- - alterado o scroll do box para boxContent
- - agora tem arquivo css para personalizar
- - foi adicionada uma opcao para setar o nome da classe
- - foi adicionada uma opcao para ter ou nao animacao
- - foi adicionada uma opcao para setar a velocidade da animacao
- - foi adicionada uma opcao para setar o easing
+﻿Change log
 
- 1.2
- - agora tem como chamar assim $.edbox()
- - se for HTML ou texto aplica nowrap
- - criada extensão para poder trocar o tipo de animacao (slide, fade and toggle)
- - fixed an issue when closing while loading
+version 1.1
+New: option ID
+New: option animation (boolean)
+New: option duration
+New: option easing
+Improved: Dimensions setup
+Improved: Scroll functions
 
- 1.3
- - New: added a callback (onClose) option
+version 1.2
+New: Added $.edbox() function
+New: Added animation types (slide, fade and toggle)
+Fixed: close modal while loading issue
 
- 1.4
- - New: option "disableClose" to disable closing events
- - New: method to call closeBox function with callback
- - Changed: option "close" to "htmlClose"
- - changed: option "boxClass" to "className"
- - fixed: issue getting dimensions of the content
- - fixed: centering load inmage when using padding
- - fixed: content type validation when using html tags
- - removed: bgColor option
- - removed: overlayBgColor option
+version 1.3
+New: option onClose callback
 
- 1.5
- - improved: setting dimensions to the window
- 
- 1.6
- - New: design
- - New: added a callback (onOpen) option
- - New: header and footer
- - Changed: option className to prefixId
+version 1.4
+New: option disableClose
+New: method to call closeBox function with callback
+Changed: option "close" to "htmlClose"
+Changed: option "boxClass" to "className"
+Fixed: issue getting dimensions of the content
+Fixed: centering load image when using padding
+Fixed: content validation when using html
+Removed: option bgColor
+Removed: option overlayBgColor
 
- 1.7
- - New: option beforeOpen to fire a function before edbox begins to open
- - New: option beforeClose to fire a function before edbox begins to close
- - Change: if content is a dom element so now it will be moved into modal, instead cloned
+version 1.5
+improved: setting dimensions to the window
+version 1.6
+New: option onOpen callback
+New: header and footer
+Changed: option className to prefixId
+
+version 1.7
+New: option beforeOpen callback
+New: option beforeClose callback
+Change: Content option treatment for DOM elements
+
+Version 1.8
+Change: Methods treatment
+Change: Error messages treatment

@@ -1,21 +1,26 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="UTF-8">
+	<meta name="description" content="jQuery edSlider plugin">
+	<meta name="keywords" content="HTML,CSS,JavaScript,jquery,plugin,slider">
+	<meta name="author" content="Eduardo Moreno">
 	<title>jQuery edSlider plugin</title>
 	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' type='text/css'>
 	<link rel="stylesheet" href="css/edslider.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/animate-custom.css">
+	<link rel="stylesheet" href="css/prism.css">
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="js/jquery.edslider.js"></script>
+	<script src="js/prism.js"></script>
 	<script>
 		$(document).ready(function(){
 			//Call plugin
 			$('.mySlideshow').edslider({
-				width : 900,
+				width : '100%',
 				height: 500
-			});		
+			});
 		});
 	</script>
 </head>
@@ -23,98 +28,50 @@
 <body>
 
 	<header>
-		<a class="btn download float-right" href="jquery.edslider.zip">Download edSlider v1.3 (zip)</a>
+		<a class="btn download float-right" href="jquery.edslider.zip">Download edSlider v1.4 (zip)</a>
 		<img src="images/logo.png" alt="" class="logo">
 	</header>
 
-	<ul class="mySlideshow">
-		<li class="first">
-			<a href="http://www.harley-davidson.com" class="animated fadeInLeft">
-				<img src="images/hd-logo.png" width="330" height="255" alt="Harley-Davidson">
-			</a>
-			<div class="animated fadeInRight">It's time to ride!</div>
-		</li>
-		<li class="second">
-			<img class="animated fadeInUp" src="images/second-title.png" width="162" height="57" alt="FAT BOY">
-		</li>
-		<li class="third">
-			<img class="animated fadeInDown" src="images/third-title.png" width="179" height="57" alt="IRON 883">
-		</li>
-		<li class="fourth">
-			<img class="animated fadeInUp" src="images/fourth-title.png" width="281" height="57" alt="V-ROD MUSCLE">
-		</li>
-		<li class="fifth">
-			<img class="animated fadeInDown" src="images/fifth-title.png" width="366" height="57" alt="ROAD GLIDE CUSTOM">
-		</li>
-	</ul>
-
 	<div class="container">
+
+		<ul class="mySlideshow">
+			<li class="first">
+				<a href="http://www.harley-davidson.com" target="_blank" class="animated fadeInLeft">
+					<img src="images/hd-logo.png" width="330" height="255" alt="Harley-Davidson">
+				</a>
+				<div class="animated fadeInRight">It's time to ride!</div>
+			</li>
+			<li class="second">
+				<img src="images/second-title.png" class="animated fadeInRight">
+			</li>
+			<li class="third">
+				<img src="images/third-title.png" class="animated fadeInLeft">
+			</li>
+			<li class="fourth">
+				<img src="images/fourth-title.png" class="animated fadeInRight">
+			</li>
+			<li class="fifth">
+				<img src="images/fifth-title.png" class="animated fadeInLeft">
+			</li>
+		</ul>
+	
 		<h2>How to use?</h2>
 
-		<p>1º - Call jQuery, edSlider plugin and edSlider css inside &lt;HEAD> tag</p>
+		<p>1º - Call jQuery, edSlider plugin and edSlider</p>
 
-		<div class="code orange">
-			<span>&lt;link rel="<em>stylesheet</em>" href="<em>your-css-directory/edslider.css</em>"></span>
-			<span>&lt;script src="<em>http://code.jquery.com/jquery-latest.min.js</em>">&lt;/script></span>
-			<span>&lt;script src="<em>your-js-directory/edslider-1.2.js</em>">&lt;/script></span>
-		</div>
+		<pre data-src="how-to-use-01.html"><code class="language-markup"></code></pre>
 
-		<p>2º - When document is ready, initialize the plugin (still in &lt;HEAD> tag)</p>
+		<p>2º - Init plugin</p>
 
-		<div class="code green">
-			<span>&lt;script></span>
-			<span>
-				<span>$(<em>document</em>).ready(function(){</span>
-			</span>
-			<span>
-				<span>
-					<span>$(<em>'.mySlideshow'</em>).edslider({</span>
-				</span>
-			</span>
-			<span>
-				<span>
-					<span>
-						<span>width:<em>'960'</em>,</span>
-					</span>
-				</span>
-			</span>
-			<span>
-				<span>
-					<span>
-						<span>height:<em>'400'</em></span>
-					</span>
-				</span>
-			</span>
-			<span>
-				<span>
-					<span>});</span>
-				</span>
-			</span>
-			<span>
-				<span>});</span>
-			</span>
-			<span>&lt;/script></span>
-		</div>
+		<pre data-src="how-to-use-02.html"><code class="language-markup"></code></pre>
 
-		<p>3º - Inside &lt;BODY> tag, make the html structure like this:</p>
+		<p>3º - Html structure</p>
 
-		<div class="code blue">
-			<span>&lt;ul class="<em>mySlideshow</em>"></span>
-			<span>
-				<span>&lt;li><em>Yor stuff here!</em>&lt;/li></span>
-			</span>
-			<span>
-				<span>&lt;li><em>Yor stuff here!</em>&lt;/li></span>
-			</span>
-			<span>
-				<span>&lt;li><em>Yor stuff here!</em>&lt;/li></span>
-			</span>
-			<span>&lt;/ul></span>
-		</div>
+		<pre data-src="how-to-use-03.html"><code class="language-markup"></code></pre>
 
 		<h2>Options</h2>
 
-		<table class="code">
+		<table class="options">
 			<thead>
 				<tr>
 					<th>Option</th>
@@ -126,57 +83,57 @@
 				<tr>
 					<td>width</td>
 					<td>960</td>
-					<td>Sets the width of the slider</td>
+					<td>Set width</td>
 				</tr>
 				<tr>
 					<td>height</td>
 					<td>400</td>
-					<td>Sets the height of the slider</td>
+					<td>Set height</td>
 				</tr>
 				<tr>
 					<td>position</td>
 					<td>1</td>
-					<td>Sets the start position. It must be between 1 and the &ltli> lenght.</td>
+					<td>Start position</td>
 				</tr>
 				<tr>
 					<td>interval</td>
 					<td>5000</td>
-					<td>Sets the time interval (in milliseconds) between slides.</td>
+					<td>Interval time between slides (in milliseconds)</td>
 				</tr>
 				<tr>
 					<td>duration</td>
 					<td>500</td>
-					<td>Sets the speed (in milliseconds) of the animations.</td>
+					<td>Animation Speed (in milliseconds)</td>
 				</tr>
 				<tr>
 					<td>animation</td>
 					<td>true</td>
-					<td>Enable/disable animation.</td>
+					<td>Enable/disable animation</td>
 				</tr>
 				<tr>
 					<td>paginator</td>
 					<td>true</td>
-					<td>Enable/disable the paginator (boolean value: true or false).</td>
+					<td>Enable/disable paginator</td>
 				</tr>
 				<tr>
 					<td>navigator</td>
 					<td>true</td>
-					<td>Enable/disable the "next" and "prev" navigation buttons (boolean value: true or false).</td>
+					<td>Enable/disable "next"/"prev" navigation buttons</td>
 				</tr>
 				<tr>
 					<td>progress</td>
 					<td>true</td>
-					<td>Enable/disable the interval progress bar (boolean value: true or false).</td>
+					<td>Enable/disable interval progress bar</td>
 				</tr>
 				<tr>
 					<td>loadImgSrc</td>
 					<td>'images/load.gif'</td>
-					<td>Sets the path of the loading image.</td>
+					<td>Load image url</td>
 				</tr>
 				<tr>
 					<td>skin</td>
 					<td>'edslider'</td>
-					<td>Sets the name of the skin. Use the edslider.css file to create your own skin.</td>
+					<td>Skin name</td>
 				</tr>
 			</tbody>
 		</table>
@@ -204,10 +161,15 @@
 			<ul>
 				<li>Fixed: issue preloading images</li>
 			</ul>
+
+			<strong>version 1.4</strong>
+			<ul>
+				<li>Improved: responsive dimensions</li>
+			</ul>
 		</div>
 
 
-		<a class="btn download en" href="jquery.edslider.zip">Download edSlider v1.3 (zip)</a>
+		<a class="btn download en" href="jquery.edslider.zip">Download edSlider v1.4 (zip)</a>
 
 		<hr/>
 
