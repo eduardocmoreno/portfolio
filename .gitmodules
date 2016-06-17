@@ -1,0 +1,3 @@
+[submodule "edbox/edBox"]
+	path = edbox/edBox
+	url = https://github.com/eduardocmoreno/edBox
