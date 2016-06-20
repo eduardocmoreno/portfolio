@@ -181,7 +181,7 @@ section .icons{
 	flex-wrap: wrap;
 }
 section .icons .wrap{
-	flex:1 150px;
+	flex:1 300px;
 	margin: 30px 5px;
 }
 section .icons .wrap img{
@@ -259,9 +259,11 @@ section .thumbs .wrap img{
 	left: 0;
 }
 @media only screen and (max-width: 710px) {
-
 	section {
 		padding: 20px 10px;
+	}
+	section .icons .wrap{
+		flex-basis: 220px;
 	}
 }
 @media only screen and (max-width: 500px){
