@@ -15,3 +15,7 @@
 - Improved: responsive dimensions
 - Improved: preloading images
 - Improved: progress bar function
+
+1.5
+- Fixed: css issue when preloading images
+- Improved: private dimensions settings
