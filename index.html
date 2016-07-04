@@ -48,7 +48,7 @@
 					}
 				});
 			
-			nav_a.on('click', function(e){
+			nav_a.add('.name').on('click', function(e){
 				e.preventDefault();
 				var target = $(this).attr('rel');
 				$(window).scrollTo('#' + target, {duration: 1000, offset: -80, easing: 'easeInOutExpo'});
@@ -56,23 +56,23 @@
 		});		
 	</script>
 </head>
-<body>
+<body id="home">
 	<header>
 		<div>
 			<nav id="menu">
-				<a href class="whoAmI wow fadeIn" data-wow-delay=".1s" rel="whoAmI">who am I?</a>
-				<a href class="knowledge wow fadeIn" data-wow-delay=".15s" rel="knowledge">knowledge</a>
+				<a href class="about wow fadeIn" data-wow-delay=".1s" rel="about">about me</a>
+				<a href class="skills wow fadeIn" data-wow-delay=".15s" rel="skills">skills</a>
 				<a href class="jobs wow fadeIn" data-wow-delay=".2s" rel="jobs">jobs</a>
 				<a href class="contact wow fadeIn" data-wow-delay=".25s" rel="contact">contact</a>
 			</nav>
-			<a href="" class="name wow fadeIn">
+			<a href="#" rel="home" class="name wow fadeIn">
 				<img src="img/logo.png" alt="logo"><b>Edu</b>Moreno
 			</a>
 		</div>
 	</header>
-	<section class="whoAmI" id="whoAmI">
+	<section class="about" id="about">
 		<div>
-			<h1 class="wow fadeIn">who am I?</h1>
+			<h1 class="wow fadeIn">about me</h1>
 			<div class="content">
 				<img src="img/edu.png" alt="edu" class="wow flipInX" data-wow-duration=".6s" data-wow-delay=".2s"><br>
 				<span class="wow fadeIn" data-wow-delay=".4s">
@@ -83,9 +83,9 @@
 			</div>
 		</div>
 	</section>
-	<section class="knowledge" id="knowledge">
+	<section class="skills" id="skills">
 		<div>
-			<h1 class="wow fadeIn">knowledge</h1>
+			<h1 class="wow fadeIn">skills</h1>
 			<h2 class="wow fadeIn" data-wow-delay=".2s">[ Front-end ]</h2>
 			<br>
 			<div class="content icons">
@@ -135,45 +135,66 @@
 				<b class="wow fadeIn">[ Websites ]</b>
 				<br>
 				<div class="thumbs">
+					<a href="docbrasil" class="wrap wow fadeIn" target="_blank" data-wow-delay=".1s">
+						<span>
+							<b>Doc brasil</b>
+							<span>front-end dev.</span>
+						</span>
+						<img src="img/job-web-docbrasil.png" alt="Matiza Plast">
+					</a>
+					<div class="wrap wow fadeIn" data-wow-delay=".1s">
+						<span>
+							<b>Socialprint</b>
+							<span>front-end dev.</span>
+						</span>
+						<img src="img/job-web-socialprint.png" alt="Socialprint">
+					</div>
+					<div class="wrap wow fadeIn" data-wow-delay=".1s">
+						<span>
+							<b>Socialpoints</b>
+							<span>front-end dev.</span>
+						</span>
+						<img src="img/job-web-socialpoints.png" alt="Socialpoints">
+					</div>
 					<a href="http://matizaplast.com.br" class="wrap wow fadeIn" target="_blank" data-wow-delay=".1s">
 						<span>
 							<b>Matizaplast</b>
-							<span>website</span>
+							<span>design + front-end dev.</span>
 						</span>
 						<img src="img/job-web-matiza.png" alt="Matiza Plast">
 					</a>
 					<a href="http://sindimoveis.org.br/" class="wrap wow fadeIn" target="_blank" data-wow-delay=".15s">
 						<span>
 							<b>Sindimóveis</b>
-							<span>website</span>
+							<span>design + front-end dev.</span>
 						</span>
 						<img src="img/job-web-sindi.png" alt="Sindimoveis">
 					</a>
 					<a href="http://moveistotal.com.br" class="wrap wow fadeIn" target="_blank" data-wow-delay=".2s">
 						<span>
 							<b>Móveis Total</b>
-							<span>website</span>
+							<span>design + front-end dev.</span>
 						</span>
 						<img src="img/job-web-moveis.png" alt="Moveis Total">
 					</a>
 					<a href="http://brahmanengenharia.com.br" class="wrap wow fadeIn" target="_blank" data-wow-delay=".25s">
 						<span>
 							<b>Brahman Eng.</b>
-							<span>website</span>
+							<span>design + front-end dev.</span>
 						</span>
 						<img src="img/job-web-brahman.png" alt="Brahman Engenharia">
 					</a>
 					<a href="http://sideralsegseguros.com.br" class="wrap wow fadeIn" target="_blank" data-wow-delay=".3s">
 						<span>
 							<b>Sideralseg</b>
-							<span>website</span>
+							<span>design + flash dev.</span>
 						</span>
 						<img src="img/job-web-sideral.png" alt="Sideralseg">
 					</a>
 					<a href="http://hotelpalacio.com.br" class="wrap wow fadeIn" target="_blank" data-wow-delay=".35s">
 						<span>
 							<b>Hotel Palácio</b>
-							<span>website</span>
+							<span>design + flash dev.</span>
 						</span>
 						<img src="img/job-web-hotel.png" alt="Hotel Palacio">
 					</a>

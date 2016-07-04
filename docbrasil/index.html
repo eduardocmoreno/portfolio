@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Doc Brasil</title>
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700" />
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/edslider.css">
+	<link rel="stylesheet" href="css/edbox.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/jquery.edslider-1.6.js"></script>
+	<script src="js/jquery.edbox.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.scrollTo-min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			//Auto margins
+			var menu = $('header .menu ul'),
+			menuItemWidth = new Number(),
+			menuItem = menu.find('li').each(function() {
+				menuItemWidth += $(this).width();
+			}), windowWidth;
+
+			$(window).on('resize', function() {
+				marginCalc = Math.floor((menu.width() - menuItemWidth)/(menuItem.length - 1));
+				menuItem.not(':first-child').css('margin-left', marginCalc >= 10 ? marginCalc : 10  + 'px');
+				windowWidth = $(this).width();
+			}).resize().animate({
+				scrollTop : 0
+			},	100, function() {
+				new WOW().init();
+			});
+
+			//Slider
+			$('.slide-show ul').edslider({
+				width : '100%',
+				height: 'auto',
+				progress : false,
+				paginator : false
+			});
+
+			//Modal
+			$('section.services a[class^="serv-"]').on('click', function(e){
+				e.preventDefault();
+				var title = $(this).find('span').html().replace(/ /g, '%20');
+				$.edbox({
+					content: 'services-modal.php?serv=' + title,
+					imgLoad : 'images/load.gif'
+				});
+			})			
+			$(document).on('click', '.go-contact', function(){
+				$.edbox.close();
+				$(window).scrollTo('#contact', {duration: 1000, offset: -(windowWidth >= 768 ? 100 : 80), easing: 'easeInOutExpo'});
+			});
+
+			//Scroll to
+			$('nav a').add('.logo').add('.request').on('click', function(e){
+				e.preventDefault();
+				var target = $(this).attr('rel');
+				switch(target) {
+					case 'home': offsetMargin = 0; break;
+					case 'about': offsetMargin = (windowWidth >= 768 ? 20 : 0); break;
+					case 'services': offsetMargin = (windowWidth >= 768 ? 90 : 60); break;
+					case 'dif': offsetMargin = (windowWidth >= 768 ? 70 : -10); break;
+					case 'blog': offsetMargin = (windowWidth >= 768 ? 120 : 90); break;
+					case 'contact': offsetMargin = (windowWidth >= 768 ? 100 : 80); break;
+				}
+				$(window).scrollTo('#' + target, {duration: 1000, offset: -offsetMargin, easing: 'easeInOutExpo'});
+			});
+
+			//Show aside menu
+			$('.call-menu').add('.aside-menu a').click(function(){
+				$('.call-menu').add('.aside-menu').toggleClass('active');
+			});
+
+			//WOW Animate
+			new WOW().init();
+
+		});
+	</script>
+</head>
+<body id="home" ontouchstart="">
+
+	<!-- header -->
+	<header>
+		<div class="container big-header">
+			<a href="#" rel="home" class="logo wow fadeIn">
+				<img src="images/header-logo.png" alt="Doc Brasil">
+			</a>
+			<div class="phone wow fadeIn">
+				<img class="icon" src="images/pixel.png" alt="phone-icon">
+				(41) 2101-1798
+			</div>
+			<div class="social">
+				<a href="#" class="wow fadeInUp" data-wow-duration=".5s">
+					<img src="images/pixel.png" alt="twitter" class="icon twitter" >
+				</a>
+				<a href="#" class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".1s">
+					<img src="images/pixel.png" alt="facebook" class="icon facebook">
+				</a>
+				<a href="#" class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s">
+					<img src="images/pixel.png" alt="instagram" class="icon instagram">
+				</a>
+				<a href="#" class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
+					<img src="images/pixel.png" alt="rss feed" class="icon rss">
+				</a>
+			</div>
+			<nav class="menu">
+				<ul>
+					<li class="wow fadeInDown" data-wow-duration=".5s" >
+						<a href="#" rel="about">Quem somos</a>
+					</li>
+					<li class="wow fadeInDown" data-wow-duration=".5s" data-wow-delay=".1s">
+						<a href="#" rel="services">Serviços</a>
+					</li>
+					<li class="wow fadeInDown" data-wow-duration=".5s" data-wow-delay=".15s">
+						<a href="#" rel="dif">Diferenciais</a>
+					</li>
+					<li class="wow fadeInDown" data-wow-duration=".5s" data-wow-delay=".2s">
+						<a href="#" rel="blog">Blog</a>
+					</li>
+					<li class="wow fadeInDown" data-wow-duration=".5s" data-wow-delay=".25s">
+						<a href="#" rel="contact">Contato</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="compact-header">
+			<a href="#" rel="home" class="logo wow fadeIn">
+				<img src="images/header-compact-logo.png" alt="Doc Brasil">
+			</a>
+			<button class="call-menu icon wow fadeInRight"></button>
+			<nav class="aside-menu">
+				<ul>
+					<li><a href="#" rel="about">Quem somos</a></li>
+					<li><a href="#" rel="services">Serviços</a></li>
+					<li><a href="#" rel="dif">Diferenciais</a></li>
+					<li><a href="#" rel="blog">Blog</a></li>
+					<li><a href="#" rel="contact">Contato</a></li>
+				</ul>
+				<div class="phone-and-social">
+					<span class="phone">
+						<img class="icon" src="images/pixel.png" alt="phone-icon">
+						(41) 2101-1798
+					</span>
+					<a href="#"><img src="images/pixel.png" alt="twitter" class="icon twitter" ></a>
+					<a href="#"><img src="images/pixel.png" alt="facebook" class="icon facebook"></a>
+					<a href="#"><img src="images/pixel.png" alt="instagram" class="icon instagram"></a>
+					<a href="#"><img src="images/pixel.png" alt="rss feed" class="icon rss"></a>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+
+	<!-- slide-show -->
+	<section id="slide-show" class="slide-show">
+		<ul>
+			<li>
+				<a href="#">
+					<img class="large" src="images/slide-large-01.jpg" alt="">
+					<img class="medium" src="images/slide-medium-01.jpg" alt="">
+					<img class="small" src="images/slide-small-01.jpg" alt="">
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img class="large" src="images/slide-large-02.jpg" alt="">
+					<img class="medium" src="images/slide-medium-02.jpg" alt="">
+					<img class="small" src="images/slide-small-02.jpg" alt="">
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img class="large" src="images/slide-large-03.jpg" alt="">
+					<img class="medium" src="images/slide-medium-03.jpg" alt="">
+					<img class="small" src="images/slide-small-03.jpg" alt="">
+				</a>
+			</li>
+		</ul>
+	</section>
+
+	<!-- about -->
+	<section id="about" class="about">
+		<div class="container">
+			<h1 class="section-title section-title-blue wow fadeIn">Quem Somos</h1>
+			<p class="wow fadeIn">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi 
+			</p>
+			<div class="about-desc">
+				<article class="wow fadeIn">
+					<h2>Missão</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+					</p>
+				</article>
+				<article class="wow fadeIn" data-wow-delay=".15s">
+					<h2>Visão</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+					</p>
+				</article>
+				<article class="wow fadeIn" data-wow-delay=".3s">
+					<h2>Valores</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services -->
+	<section id="services" class="services">
+		<div class="container">
+			<h1 class="section-title section-title-white wow fadeIn">Serviços</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			</p>
+			<ul class="services-list">
+				<li class="wow fadeInUp" data-wow-duration=".5s">
+					<a href="#" class="serv-01">
+						<img src="images/pixel.png" alt="Gestão de Empresas e Gerenciamento de Processos">
+						<span>Gestão de Empresas e Gerenciamento de Processos</span>
+					</a>
+				</li>
+				<li class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".05s">
+					<a href="#" class="serv-02">
+						<img src="images/pixel.png" alt="Regularização de Empresas">
+						<span>Regularização de Empresas</span>
+					</a>
+				</li>
+				<li class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".1s">
+					<a href="#" class="serv-03">
+						<img src="images/pixel.png" alt="Acessoria Paralegal">
+						<span>Acessoria Paralegal</span>
+					</a>
+				</li>
+				<li class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s">
+					<a href="#" class="serv-04">
+						<img src="images/pixel.png" alt="Assessoria Administrativa">
+						<span>Assessoria Administrativa</span>
+					</a>
+				</li>
+				<li class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
+					<a href="#" class="serv-05">
+						<img src="images/pixel.png" alt="Representação Legal">
+						<span>Representação Legal</span>
+					</a>
+				</li>
+				<li class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".25s">
+					<a href="#" class="serv-06">
+						<img src="images/pixel.png" alt="Certidões">
+						<span>Certidões</span>
+					</a>
+				</li>
+				<li class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s">
+					<a href="#" class="serv-07">
+						<img src="images/pixel.png" alt="Secretária Remota">
+						<span>Secretária Remota</span>
+					</a>
+				</li>
+				<li class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".35s">
+					<a href="#" class="serv-08">
+						<img src="images/pixel.png" alt="Assessoria Documental Imobiliária">
+						<span>Assessoria Documental Imobiliária</span>
+					</a>
+				</li>
+				<li class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".4s">
+					<a href="#" class="serv-09">
+						<img src="images/pixel.png" alt="Prospecção de Imóveis">
+						<span>Prospecção de Imóveis</span>
+					</a>
+				</li>
+				<li class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".45s">
+					<a href="#" class="serv-10">
+						<img src="images/pixel.png" alt="Projeto e Regularização de Imóveis">
+						<span>Projeto e Regularização de Imóveis</span>
+					</a>
+				</li>
+				<li class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".5s">
+					<a href="#" class="serv-11">
+						<img src="images/pixel.png" alt="Endereço Fiscal">
+						<span>Endereço Fiscal</span>
+					</a>
+				</li>
+				<li class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".55s">
+					<a href="#" class="serv-12">
+						<img src="images/pixel.png" alt="Tradução de Documentos">
+						<span>Tradução de Documentos</span>
+					</a>
+				</li>
+				<li class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".6s">
+					<a href="#" class="serv-13">
+						<img src="images/pixel.png" alt="Centro de Bens">
+						<span>Centro de Bens</span>
+					</a>
+				</li>
+				<li class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".65s">
+					<a href="#" rel="contact" class="btn btn-block btn-green request">Solicite uma proposta</a>
+				</li>
+			</ul>
+			<a href="#" rel="contact" class="btn btn-green btn-request request wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".65s">Solicite uma proposta</a>
+		</div>
+		
+	</section>
+
+	<!-- Deferentials -->
+	<section id="dif" class="dif">
+		<div class="wrapper">
+			<div class="container">
+				<img class="section-dif-img wow fadeInLeft" src="images/pixel.png" alt="">
+				<h1 class="section-title section-title-blue wow fadeIn">Diferenciais</h1>
+				<ul class="section-dif-list">
+					<li class="wow zoomIn" data-wow-duration=".5s">
+						<img class="dif-01" src="images/pixel.png" alt="Icone">
+						<span>Serviços prestados em todo o Brasil</span>
+					</li>
+					<li class="wow zoomIn" data-wow-duration=".5s" data-wow-delay=".1s">
+						<img class="dif-02" src="images/pixel.png" alt="Icone">
+						<span>Começo imediato de trabalhos</span>
+					</li>
+					<li class="wow zoomIn" data-wow-duration=".5s" data-wow-delay=".15s">
+						<img class="dif-03" src="images/pixel.png" alt="Icone">
+						<span>Profissionais especializados em cada área</span>
+					</li>
+					<li class="wow zoomIn" data-wow-duration=".5s" data-wow-delay=".2s">
+						<img class="dif-04" src="images/pixel.png" alt="Icone">
+						<span>Agilidade na entrega dos serviços</span>
+					</li>
+					<li class="wow zoomIn" data-wow-duration=".5s" data-wow-delay=".25s">
+						<img class="dif-05" src="images/pixel.png" alt="Icone">
+						<span>Atendimento personalizado</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- Blog -->
+	<section id="blog" class="blog">
+		<div class="container">
+			<h1 class="section-title section-title-blue wow fadeIn">Blog</h1>
+			<div class="blog-articles">
+				<a href="#">
+					<span class="figure">
+						<img src="images/section-blog-img-01.png" alt="">
+					</span>
+					<span class="desc">
+						<span class="title">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit
+						</span>
+						<span class="resume">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+						</span>
+						<span class="read-more">veja mais</span>
+					</span>
+				</a>
+				<a href="#">
+					<span class="figure">
+						<img src="images/section-blog-img-02.png" alt="">
+					</span>
+					<span class="desc">
+						<span class="title">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit
+						</span>
+						<span class="resume">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+						</span>
+						<span class="read-more">veja mais</span>
+					</span>
+				</a>
+			</div>
+			<a href="#" class="btn btn-block btn-green">Acesse Nosso Blog</a>
+		</div>
+	</section>
+	
+	<!-- Contact -->
+	<section id="contact" class="contact">
+		<div class="wrapper">
+			<div class="container">
+				<h1 class="section-title section-title-white wow fadeIn">Entre em Contato</h1>
+				<form action="">
+					<input class="form-input wow fadeInLeft" data-wow-duration=".5s" type="text" placeholder="Nome">
+					<input class="form-input wow fadeInLeft" data-wow-duration=".5s" data-wow-delay=".1s" type="text" placeholder="E-mail">
+					<input class="form-input wow fadeInLeft" data-wow-duration=".5s" data-wow-delay=".15s" type="text" placeholder="Empresa">
+					<input class="form-input wow fadeInLeft" data-wow-duration=".5s" data-wow-delay=".2s" type="text" placeholder="Telefone">
+					<textarea class="form-textarea wow fadeInLeft" data-wow-duration=".5s" data-wow-delay=".25s" placeholder="Mensagem"></textarea>
+					<input type="submit" value="enviar" class="btn btn-green wow fadeInLeft" data-wow-duration=".5s" data-wow-delay=".3s">
+				</form>
+				<div class="info">
+					<div class="phone-and-social">
+						<div class="phone wow fadeInUp" data-wow-duration=".5s">(41) 2101-1798</div>
+						<a href="#" class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".1s"><img src="images/pixel.png" alt="twitter" class="twitter" ></a>
+						<a href="#" class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s"><img src="images/pixel.png" alt="facebook" class="facebook"></a>
+						<a href="#" class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s"><img src="images/pixel.png" alt="instagram" class="instagram"></a>
+						<a href="#" class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".25s"><img src="images/pixel.png" alt="rss feed" class="rss"></a>
+					</div>
+					<p class="wow fadeIn" data-wow-delay=".3s">Avenida Presidente Affonso Camargo, 2305 Loja 10, Cristo Rei - CEP 80.050-370 | Curitiba | PR</p>
+					<div class="map wow fadeIn" data-wow-delay=".35s">
+						<div>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1801.4866020130019!2d-49.238411446140006!3d-25.43915937347853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce5a9fca17d91%3A0x3b240950984c92ca!2sAv.+Presidente+Affonso+Camargo%2C+2305+-+Cristo+Rei%2C+Curitiba+-+PR%2C+80050-370!5e0!3m2!1spt-BR!2sbr!4v1467207789599" width="380" height="210" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
+					<a href="https://maps.google.com/maps?ll=-25.438811,-49.237968&z=16&t=m&hl=en-US&gl=BR&mapclient=embed&q=Av.%20Presidente%20Affonso%20Camargo%2C%202305%20-%20Cristo%20Rei%20Curitiba%20-%20PR%2080050-370" target="_blank" class="link link-green wow fadeIn" data-wow-delay=".4s">Veja no Google Maps</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="wow fadeIn">
+		<div class="container">
+			Copyright &copy; 2016 Contratos GOV. Todos os direitos reservados.
+			<span> 
+				Produzido por
+				<a href="http://www.agencia.red/" target="_blank" class="red-ag" title="Red Agência Digital">
+					<img src="images/pixel.png" alt="Red Agência Digital">
+				</a>
+			</span>
+		</div>
+	</footer>
+</body>
+</html>

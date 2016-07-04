@@ -19,3 +19,7 @@
 1.5
 - Fixed: css issue when preloading images
 - Improved: private dimensions settings
+
+1.6
+- Improved: auto height
+- Improved: new html structure for controls

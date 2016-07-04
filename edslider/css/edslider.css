@@ -9,18 +9,22 @@
 	padding:0;
 	margin:0;
 }
-.edslider > ul{
+.edslider .slider{
 	background:#fff;
 	display:block;
-	overflow:hidden;
+	overflow: hidden;
+	transition: height .3s;
 }
-.edslider > ul li{
-	display:none;
-	width:100%;
+.edslider .slider li{
 	position:absolute;
+	width: 100%;
 	top:0;
 	left:0;
 	z-index:0;
+}
+.edslider .slider li.current{
+	position: relative;
+	z-index:1;
 }
 .edslider a{
 	display:block;
@@ -28,47 +32,41 @@
 .edslider a img{
 	border:0;
 }
-.edslider .current{
-	z-index:1 !important;
-}
 /*---controls---*/
-.edslider .controls{
-	top: 0;
-	height: 0;
-	position:absolute;
-	width: 100%;
-	z-index:2;
-}
-.edslider .controls .navigator{
+.edslider .navigator{
 	background: rgba(0,0,0,.3);
 	background-image:url(../images/sprite-navigator.png);
 	cursor:pointer;
-	display:block;
+	display: block;
 	width:50px;
 	height:50px;
 	position: absolute;
 	overflow: hidden;
-	top: 225px;
-	transition: background .2s;
+	top: 50%;
+	opacity: 0;
+	transition: background .35s, opacity .35s;
+	z-index: 2;
 }
-.edslider .controls .next{
+.edslider .next{
 	background-position:0 0;
-	right: 0;
 }
-.edslider .controls .prev{
+.edslider .prev{
 	background-position:0 -50px;
-	left: 0;
 }
-.edslider .controls .next:hover,
-.edslider .controls .prev:hover{
+.edslider .next:hover,
+.edslider .prev:hover{
 	background-color: rgba(0,0,0,.6);
 }
-.edslider .controls .paginator{
-	position: relative;
+.edslider .paginator{
+	opacity: 0;
+	position: absolute;
 	text-align: center;
-	top: 470px;
+	bottom: 20px;
+	left: 50%;
+	transition: opacity .2s;
+	z-index: 2;
 }
-.edslider .controls .paginator li{
+.edslider .paginator li{
 	background:rgba(0,0,0,.7);
 	border-radius: 8px;
 	box-sizing: border-box;
@@ -79,14 +77,21 @@
 	cursor:pointer;
 	transition: background .2s;
 }
-.edslider .controls .paginator li.current,
-.edslider .controls .paginator li:hover,
+.edslider .paginator li.current,
+.edslider .paginator li:hover,
 .edslider .progress{
 	background:rgba(255,255,255,.5);
 }
 .edslider .progress{
+	opacity: 0;
 	position: absolute;
 	top: 0;
 	height:3px;
+	transition: opacity .2s;
 	z-index:2;
+}
+.edslider:hover .navigator,
+.edslider:hover .paginator,
+.edslider .progress{
+	opacity: 1;
 }

@@ -12,13 +12,12 @@
 	<link rel="stylesheet" href="css/animate-custom.css">
 	<link rel="stylesheet" href="css/prism.css">
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="js/jquery.edslider-1.5.js"></script>
+	<script src="js/jquery.edslider-1.6.js"></script>
 	<script src="js/prism.js"></script>
 	<script>
 		$(document).ready(function(){
 			//Call plugin
 			$('.mySlideshow').edslider({
-				width : '100%',
 				height: 500
 			});
 		});
@@ -28,7 +27,7 @@
 <body>
 
 	<header>
-		<a class="btn download float-right" href="jquery.edslider.zip">Download edSlider v1.5 (zip)</a>
+		<a class="btn download float-right" href="jquery.edslider.zip">Download edSlider v1.6 (zip)</a>
 		<img src="images/logo.png" alt="" class="logo">
 	</header>
 
@@ -75,19 +74,19 @@
 			<thead>
 				<tr>
 					<th>Option</th>
-					<th>Default Value</th>
+					<th>Default</th>
 					<th>Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<td>width</td>
-					<td>960</td>
+					<td>'100%'</td>
 					<td>Set width</td>
 				</tr>
 				<tr>
 					<td>height</td>
-					<td>400</td>
+					<td>'auto'</td>
 					<td>Set height</td>
 				</tr>
 				<tr>
@@ -174,10 +173,15 @@
 				<li>Fixed: css issue when preloading images</li>
 				<li>Improved: private dimensions settings</li>
 			</ul>
+
+			<strong>version 1.6</strong>
+			<ul>
+				<li>Improved: auto height</li>
+				<li>Improved: new html structure for controls</li>
+			</ul>
 		</div>
 
-
-		<a class="btn download en" href="jquery.edslider.zip">Download edSlider v1.5 (zip)</a>
+		<a class="btn download en" href="jquery.edslider.zip">Download edSlider v1.6 (zip)</a>
 
 		<hr/>
 

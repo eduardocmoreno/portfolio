@@ -78,10 +78,10 @@ header nav.compact a{
 header nav.compact.active a{
 	display: list-item;
 }
-header nav a.whoAmI:hover{
+header nav a.about:hover{
 	color: #208c86;
 }
-header nav a.knowledge:hover{
+header nav a.skills:hover{
 	color: #370045;
 }
 header nav a.jobs:hover{
@@ -110,19 +110,19 @@ section h2{
 section h2{
 	font-size: 26px;
 }
-section.whoAmI{
+section.about{
 	background-color: #208C86;
 	margin-top: 80px;
 	z-index: 4;
 }
-section.whoAmI img{
+section.about img{
 	display: inline-block;
 }
-section.knowledge{
+section.skills{
 	background-color: #370045;
 	z-index: 3;
 }
-section.knowledge .text:nth-child(2){
+section.skills .text:nth-child(2){
 	border: dotted #fff;
 	border-width: 0 0 1px;
 	padding-bottom: 60px;

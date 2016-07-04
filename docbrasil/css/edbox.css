@@ -1,0 +1,50 @@
+/* prefixId = box (default) */
+#box{
+	overflow:hidden;
+}
+#box,
+#box-load{
+	border-radius:8px;
+	background-color: #fff;
+	box-shadow:0 0 10px rgba(0, 0, 0, .5);
+}
+#box-load{
+	padding:10px;
+	background: #fff;
+}
+#box-overlay{
+	background: rgba(0,0,0,.85);
+}
+#box-header{
+	background:url("../images/bg-header.png") repeat-x;
+	height:40px;
+	line-height:40px;
+}
+#box-footer{
+	background:url("../images/bg-footer.png") repeat-x;
+	height:30px;
+	line-height:30px;
+}
+#box-header,
+#box-footer{
+	padding:0 10px;
+	color:#333;
+	font-weight:bold;
+}
+#box-close{
+	white-space:nowrap;
+	top:10px;
+	right:10px;
+	border:0;
+	background:none;
+	color:#000;
+}
+#box-close img{
+	display:block;
+	border:0;
+}
+#box-error{
+	background: red;
+	color: #fff;
+	padding: 30px;
+}
